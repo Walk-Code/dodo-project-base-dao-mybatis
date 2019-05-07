@@ -1,6 +1,10 @@
 package com.dodo.project.base.dao.mybatis.mapper;
 
+import com.dodo.project.base.dao.mybatis.bean.SystemUserSearchBean;
 import com.dodo.project.base.dao.mybatis.model.SystemUser;
+import com.github.pagehelper.Page;
+
+import java.util.List;
 
 public interface SystemUserMapper {
     /**
@@ -50,4 +54,22 @@ public interface SystemUserMapper {
      * @mbg.generated
      */
     int updateByPrimaryKey(SystemUser record);
+    
+    /* 
+    * @Description: 获取数据
+    * @Author: walk_code walk_code@163.com
+    * @Param: [bean] 
+    * @return: java.util.List<com.dodo.project.base.dao.mybatis.model.SystemUser>  
+    * @Date: 2019/5/5 19:32
+    */ 
+    List<SystemUser> getList(SystemUserSearchBean bean);
+
+    /*
+    * @Description: 获取列表数据
+    * @Author: walk_code walk_code@163.com
+    * @Param: [bean]
+    * @return: com.github.pagehelper.Page<com.dodo.project.base.dao.mybatis.model.SystemUser>
+    * @Date: 2019/5/6 17:03
+    */
+    Page<SystemUser> getListP(SystemUserSearchBean bean);
 }
